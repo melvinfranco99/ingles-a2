@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vocabulario A2 Key</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+<main class="wrap">
+<h1>Vocabulario para el A2 Key</h1>
+<p>El A2 Key se basa en una lista de unas <b>1.500 palabras</b> sobre temas cotidianos. Aquí tienes las más frecuentes organizadas por temas, los verbos irregulares imprescindibles, las combinaciones de palabras que caen en la Parte 4 y las frases útiles para Writing y Speaking. Usa las tarjetas (🔊 para oír la pronunciación) y haz los tests.</p>
+
+<div class="tabs-root" id="vtabs">
+<div class="tabs"><button>Temas</button><button>Verbos irregulares</button><button>Collocations</button><button>Palabras confusas</button><button>Frases útiles</button></div>
+
+<section class="tabpanel">
+  <h2>Vocabulario por temas</h2>
+  <p>Elige un tema para estudiarlo con tarjetas. Debajo tienes la lista completa con traducción.</p>
+  <div class="row" id="topicBtns"></div>
+  <div id="topicFlash"></div>
+  <div id="topicTable"></div>
+</section>
+
+<section class="tabpanel">
+  <h2>Verbos irregulares</h2>
+  <p>Son imprescindibles para la historia de la Parte 7 y para el Speaking. Apréndete el <b>pasado</b> (columna 2) y el <b>participio</b> (columna 3, para el present perfect).</p>
+  <div id="irr"></div>
+  <div class="card"><b>✍ Test</b><p class="instr">Escribe el pasado (past simple) del verbo entre paréntesis.</p><div id="irrQuiz"></div></div>
+</section>
+
+<section class="tabpanel">
+  <h2>Collocations: palabras que van juntas</h2>
+  <p>La Parte 4 de Reading pregunta mucho qué verbo va con qué palabra. En español decimos «hacer una foto», pero en inglés es <i>take a photo</i>.</p>
+  <div id="coll"></div>
+  <div class="card"><b>✍ Test</b><p class="instr">Elige la palabra correcta.</p><div id="collQuiz"></div></div>
+</section>
+
+<section class="tabpanel">
+  <h2>Palabras confusas</h2>
+  <p>Parejas que los hispanohablantes confunden a menudo.</p>
+  <div id="conf"></div>
+  <div class="card"><b>✍ Test</b><div id="confQuiz"></div></div>
+</section>
+
+<section class="tabpanel">
+  <h2>Frases útiles</h2>
+  <p>Aprende estas frases de memoria: te sirven en el Writing (Partes 6 y 7) y en el Speaking.</p>
+  <div id="func"></div>
+</section>
+</div>
+<p><a class="btn" href="reading.html">Siguiente: Reading →</a></p>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const TOPICS = {
+ 'Familia y personas': [['parents','padres'],['grandparents','abuelos'],['aunt / uncle','tía / tío'],['cousin','primo/a'],['husband / wife','marido / mujer'],['son / daughter','hijo / hija'],['grandson / granddaughter','nieto / nieta'],['twins','gemelos'],['neighbour','vecino/a'],['friendly','simpático'],['kind','amable'],['funny','gracioso'],['shy','tímido'],['lazy','vago'],['clever','listo'],['tall / short','alto / bajo'],['curly / straight hair','pelo rizado / liso'],['beard','barba'],['glasses','gafas'],['get married','casarse']],
+ 'Casa': [['flat','piso'],['bedroom','dormitorio'],['bathroom','cuarto de baño'],['kitchen','cocina'],['living room','salón'],['garden','jardín'],['stairs','escaleras'],['floor','suelo; planta'],['wall','pared'],['ceiling','techo (interior)'],['roof','tejado'],['fridge','nevera'],['cooker','cocina (aparato)'],['washing machine','lavadora'],['sofa','sofá'],['shelf (shelves)','estantería'],['wardrobe','armario (ropa)'],['cupboard','armario (cocina)'],['lamp','lámpara'],['rent','alquiler; alquilar']],
+ 'Comida y restaurante': [['breakfast / lunch / dinner','desayuno / comida / cena'],['vegetables','verduras'],['fruit','fruta'],['meat','carne'],['chicken','pollo'],['fish','pescado'],['rice','arroz'],['bread','pan'],['cheese','queso'],['butter','mantequilla'],['egg','huevo'],['sugar','azúcar'],['salt','sal'],['menu','carta'],['bill','cuenta'],['waiter / waitress','camarero/a'],['order','pedir (en un restaurante)'],['dessert','postre'],['delicious','delicioso'],['hungry / thirsty','con hambre / con sed']],
+ 'Ropa y compras': [['shirt','camisa'],['T-shirt','camiseta'],['jumper','jersey'],['jacket','chaqueta'],['coat','abrigo'],['trousers','pantalones'],['jeans','vaqueros'],['skirt','falda'],['dress','vestido'],['shoes / trainers','zapatos / zapatillas'],['boots','botas'],['hat / cap','sombrero / gorra'],['size','talla'],['try on','probarse'],['changing room','probador'],['cash','efectivo'],['credit card','tarjeta de crédito'],['cheap / expensive','barato / caro'],['sale','rebajas'],['receipt','ticket, recibo']],
+ 'Ciudad y transporte': [['station','estación'],['bus stop','parada de autobús'],['airport','aeropuerto'],['ticket','billete, entrada'],['single / return','ida / ida y vuelta'],['platform','andén'],['timetable','horario'],['traffic lights','semáforo'],['corner','esquina'],['crossroads','cruce'],['bridge','puente'],['square','plaza'],['library','biblioteca'],['chemist\'s','farmacia'],['post office','correos'],['car park','aparcamiento'],['get on / get off','subir / bajar (bus, tren)'],['miss the bus','perder el autobús'],['turn left / right','girar a la izquierda / derecha'],['go straight on','seguir recto']],
+ 'Viajes y vacaciones': [['holiday','vacaciones'],['trip','viaje, excursión'],['journey','trayecto'],['passport','pasaporte'],['luggage','equipaje'],['suitcase','maleta'],['book','reservar'],['hotel / campsite','hotel / camping'],['guest','huésped, invitado'],['sightseeing','hacer turismo'],['guide','guía'],['map','mapa'],['beach','playa'],['mountain','montaña'],['lake','lago'],['island','isla'],['abroad','en el extranjero'],['souvenir','recuerdo'],['tent','tienda de campaña'],['view','vistas']],
+ 'Tiempo libre y deportes': [['hobby','afición'],['go swimming','ir a nadar'],['play football','jugar al fútbol'],['do yoga / karate','hacer yoga / kárate'],['go cycling','montar en bici'],['team','equipo'],['match','partido'],['win / lose','ganar / perder'],['score a goal','marcar un gol'],['player','jugador'],['concert','concierto'],['band','grupo (música)'],['instrument','instrumento'],['camera','cámara'],['collect','coleccionar'],['board game','juego de mesa'],['film / cinema','película / cine'],['museum / gallery','museo / galería'],['club','club'],['practise','practicar']],
+ 'Colegio y trabajo': [['subject','asignatura'],['timetable','horario'],['homework','deberes'],['exam / test','examen'],['pass / fail','aprobar / suspender'],['classroom','aula'],['teacher','profesor'],['student','estudiante'],['course','curso'],['lesson','clase'],['uniform','uniforme'],['job','trabajo, empleo'],['office','oficina'],['boss','jefe'],['earn','ganar (dinero)'],['salary','sueldo'],['nurse','enfermero/a'],['engineer','ingeniero/a'],['shop assistant','dependiente'],['part-time / full-time','a tiempo parcial / completo']],
+ 'Salud y cuerpo': [['head','cabeza'],['arm / leg','brazo / pierna'],['hand / foot (feet)','mano / pie'],['back','espalda'],['stomach','estómago'],['tooth (teeth)','diente'],['headache','dolor de cabeza'],['toothache','dolor de muelas'],['a cold','un resfriado'],['a temperature','fiebre'],['cough','tos'],['ill / sick','enfermo'],['hurt','doler, hacerse daño'],['dentist','dentista'],['medicine','medicina'],['healthy','sano'],['tired','cansado'],['rest','descansar'],['appointment','cita'],['hospital','hospital']],
+ 'Tiempo y naturaleza': [['weather','tiempo (clima)'],['sunny','soleado'],['cloudy','nublado'],['windy','con viento'],['rainy','lluvioso'],['foggy','con niebla'],['snow','nieve; nevar'],['storm','tormenta'],['hot / warm','caluroso / templado'],['cool / cold','fresco / frío'],['degrees','grados'],['spring / summer','primavera / verano'],['autumn / winter','otoño / invierno'],['forest','bosque'],['river','río'],['field','campo'],['countryside','el campo'],['animal','animal'],['plant','planta'],['sky','cielo']],
+ 'Tecnología y comunicación': [['mobile phone','móvil'],['laptop','portátil'],['screen','pantalla'],['keyboard','teclado'],['website','página web'],['download','descargar'],['email','correo electrónico'],['message','mensaje'],['text (sb)','mandar un mensaje (a alguien)'],['call','llamar'],['online','en línea'],['password','contraseña'],['app','aplicación'],['photo','foto'],['video','vídeo'],['charge','cargar'],['battery','batería'],['upload','subir (archivo)'],['print','imprimir'],['social media','redes sociales']],
+};
+const IRR = [['be','was / were','been','ser, estar'],['become','became','become','llegar a ser'],['begin','began','begun','empezar'],['break','broke','broken','romper'],['bring','brought','brought','traer'],['build','built','built','construir'],['buy','bought','bought','comprar'],['can','could','—','poder'],['catch','caught','caught','coger, atrapar'],['choose','chose','chosen','elegir'],['come','came','come','venir'],['cost','cost','cost','costar'],['cut','cut','cut','cortar'],['do','did','done','hacer'],['draw','drew','drawn','dibujar'],['drink','drank','drunk','beber'],['drive','drove','driven','conducir'],['eat','ate','eaten','comer'],['fall','fell','fallen','caer'],['feel','felt','felt','sentir'],['find','found','found','encontrar'],['fly','flew','flown','volar'],['forget','forgot','forgotten','olvidar'],['get','got','got','conseguir, llegar'],['give','gave','given','dar'],['go','went','gone / been','ir'],['have','had','had','tener'],['hear','heard','heard','oír'],['know','knew','known','saber, conocer'],['leave','left','left','salir, dejar'],['lose','lost','lost','perder'],['make','made','made','hacer, fabricar'],['meet','met','met','conocer, quedar'],['pay','paid','paid','pagar'],['put','put','put','poner'],['read','read','read','leer'],['ride','rode','ridden','montar'],['run','ran','run','correr'],['say','said','said','decir'],['see','saw','seen','ver'],['sell','sold','sold','vender'],['send','sent','sent','enviar'],['sing','sang','sung','cantar'],['sit','sat','sat','sentarse'],['sleep','slept','slept','dormir'],['speak','spoke','spoken','hablar'],['spend','spent','spent','gastar, pasar (tiempo)'],['swim','swam','swum','nadar'],['take','took','taken','coger, llevar'],['teach','taught','taught','enseñar'],['tell','told','told','contar, decir'],['think','thought','thought','pensar'],['understand','understood','understood','entender'],['wake up','woke up','woken up','despertarse'],['wear','wore','worn','llevar puesto'],['win','won','won','ganar'],['write','wrote','written','escribir']];
+const COLL = [['take','a photo, a bus/train, a shower, an exam, a break, medicine, a long time'],['make','a cake, a mistake, a phone call, friends, a noise, the bed, a decision'],['do','homework, the shopping, exercise, sport, the washing-up, a course, your best'],['have','breakfast/lunch/dinner, a shower, a party, a good time, a rest, a look'],['go','shopping, swimming, home, to bed, for a walk, on holiday, by car'],['play','football, tennis, the guitar, the piano, computer games, cards'],['get','up, dressed, home, a job, tired, better, lost, married'],['spend','money, time, the weekend, the day'],['catch','a bus, a train, a cold, a ball'],['miss','the bus, a class, my family'],['pass / fail','an exam, a test'],['lose','your keys, a match, weight'],['win','a match, a prize, a competition']];
+const CONF = [['look / see / watch','mirar (algo) / ver (sin querer) / mirar algo que se mueve (TV, partido)','Look at this! I can see the sea. I watch TV every night.'],['hear / listen (to)','oír / escuchar con atención','I heard a noise. Listen to the music.'],['say / tell','decir (algo) / decir A ALGUIEN, contar','She said hello. She told me a story.'],['borrow / lend','pedir prestado / prestar','Can I borrow your pen? Can you lend me your pen?'],['bring / take','traer (aquí) / llevar (allí)','Bring a cake to my party. Take an umbrella with you.'],['come / go','venir / ir','Come here! Let\'s go to the park.'],['know / meet','saber, conocer (ya) / conocer por primera vez, quedar','I know him well. I met him in 2020.'],['win / earn','ganar (premio, partido) / ganar (dinero trabajando)','We won the match. She earns a lot.'],['travel / trip / journey','viajar / viaje corto, excursión / trayecto','I love travelling. A school trip. The journey takes two hours.'],['fun / funny','divertido (actividad) / gracioso (hace reír)','The party was fun. The film was funny.'],['actually / currently','en realidad / actualmente','Actually, I\'m Spanish. She currently works in Paris.'],['library / bookshop','biblioteca / librería','Borrow books from the library; buy them in a bookshop.'],['assist / attend','ayudar / asistir a (clase, reunión)','I attend classes every day.'],['carpet / folder','alfombra / carpeta','The carpet is red. Put the papers in the folder.'],['excited / exciting','emocionado (persona) / emocionante (cosa)','I\'m excited. The match was exciting.'],['bored / boring','aburrido (estar) / aburrido (ser)','I\'m bored. This book is boring.']];
+const FUNC = [
+ ['Empezar y terminar un email','Hi Sam, / Dear Mrs Brown, · Thanks for your email. · How are you? · See you soon! · Love, / Best wishes, / Bye for now,'],
+ ['Invitar','Would you like to come to…? · Do you want to…? · Why don\'t we…? · Let\'s…'],
+ ['Aceptar / rechazar','I\'d love to! · That sounds great. · I\'m sorry, I can\'t because… · Maybe another time?'],
+ ['Pedir y dar información','Can you tell me…? · What time does it start? · It starts at… · It costs…'],
+ ['Disculparse','I\'m sorry I can\'t come. · I\'m sorry I\'m late. · Sorry, I forgot.'],
+ ['Dar las gracias','Thank you for the present. · Thanks for inviting me. · It was very kind of you.'],
+ ['Sugerir','Shall we…? · How about going…? · We could… · Why don\'t you…?'],
+ ['Opinar','I think… · I like… because… · In my opinion… · I prefer… to…'],
+ ['Contar una historia (Parte 7)','One day… · Last Saturday… · First… · Then… · After that… · Suddenly… · In the end… · Finally… · They were very happy.'],
+ ['Speaking: pedir que repitan','Sorry, can you say that again, please? · Sorry, I don\'t understand. What does … mean?'],
+ ['Speaking: preguntar al compañero','What about you? · Do you like…? · What do you think? · Which do you prefer?'],
+ ['Speaking: ganar tiempo','Let me think… · That\'s a good question… · Well…'],
+];
+document.addEventListener('DOMContentLoaded', () => {
+  const names = Object.keys(TOPICS);
+  const showTopic = n => { flashcards($('#topicFlash'), TOPICS[n].map(([en, es]) => [en, es])); vocabTable($('#topicTable'), TOPICS[n], ['Inglés', 'Español']); $$('#topicBtns button').forEach(b => b.classList.toggle('ghost', b.textContent !== n)); };
+  $('#topicBtns').innerHTML = names.map(n => `<button class="btn sm ghost">${n}</button>`).join('');
+  $$('#topicBtns button').forEach(b => b.onclick = () => showTopic(b.textContent));
+  showTopic(names[0]);
+  vocabTable($('#irr'), IRR, ['Infinitivo', 'Pasado', 'Participio', 'Significado']);
+  const qi = [3, 8, 11, 15, 17, 22, 25, 27, 33, 39, 42, 50];
+  practice($('#irrQuiz'), 'open', { text: qi.map((i, k) => `${IRR[i][3]}: (${IRR[i][0]}) → [${k + 1}]`).join('\n\n'), ans: qi.map(i => IRR[i][1].split(' / ')) });
+  vocabTable($('#coll'), COLL, ['Verbo', 'Va con…']);
+  practice($('#collQuiz'), 'p1', { text: `Can you [1] a photo of us? I always [2] my homework after dinner. Let's [3] shopping on Saturday. I [4] a mistake in the exam. We [5] a great time at the party. She [6] the guitar in a band. I need to [7] the 8.15 train.`,
+    opts: [['take', 'make', 'do'], ['do', 'make', 'have'], ['go', 'do', 'make'], ['made', 'did', 'took'], ['had', 'did', 'made'], ['plays', 'does', 'makes'], ['catch', 'lose', 'get on']], ans: [0, 0, 0, 0, 0, 0, 0] });
+  vocabTable($('#conf'), CONF, ['Palabras', 'Diferencia', 'Ejemplo']);
+  practice($('#confQuiz'), 'p1', { text: `Can I [1] your dictionary, please? She [2] me a funny story. We [3] TV every evening. I'm so [4]: I'm going to Disneyland tomorrow! My dad [5] a lot of money in his new job. [6] me a glass of water, please.`,
+    opts: [['borrow', 'lend', 'take'], ['told', 'said', 'spoke'], ['watch', 'see', 'look'], ['excited', 'exciting', 'boring'], ['earns', 'wins', 'gains'], ['Bring', 'Take', 'Go']], ans: [0, 0, 0, 0, 0, 0] });
+  $('#func').innerHTML = FUNC.map(([h, t]) => `<div class="card"><b>${h}</b><p>${t.split(' · ').map(x => `<span data-say>${x}</span>`).join(' · ')}</p></div>`).join('');
+  speakables($('#func'));
+});
+</script>
+</body>
+</html>

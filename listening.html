@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Listening · A2 Key</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+<main class="wrap">
+<h1>Listening</h1>
+<p><b>≈ 35 minutos · 5 partes · 25 preguntas · cada audio se escucha 2 veces.</b> Necesitas unas <b>16/25</b> para aprobar.</p>
+<div class="tip"><b>Cómo funciona el audio aquí:</b> pulsa ▶ y tu navegador leerá el texto con voces en inglés (hombre/mujer distintas cuando es posible). Empieza en velocidad <i>muy lenta</i> o <i>lenta</i> y pasa a <i>normal</i> cuando te sientas seguro. En los exámenes completos solo podrás escucharlo 2 veces; aquí, las que quieras.</div>
+
+<h2>Estrategias generales</h2>
+<ul>
+<li><b>Lee las preguntas antes</b> de que empiece el audio y piensa qué vas a oír: ¿una hora?, ¿un precio?, ¿un lugar?</li>
+<li><b>Primera escucha:</b> responde lo que puedas. <b>Segunda escucha:</b> comprueba.</li>
+<li><b>Cuidado con las trampas:</b> en el audio suelen aparecer las tres opciones, pero dos se descartan: <i>“I wanted the blue one, <u>but</u> they only had it in green.”</i> Presta atención a <i>but, actually, no, sorry, in the end</i>.</li>
+<li>Repasa cómo se dicen <b>números, horas, fechas, precios y el alfabeto</b>: son la base de las Partes 1 y 2.</li>
+</ul>
+<div class="table-wrap"><table>
+<tr><th>Ojo con…</th><th>Diferencia</th></tr>
+<tr><td>thirteen / thirty, fifteen / fifty</td><td>-teen lleva el acento al final (thir<b>TEEN</b>); -ty al principio (<b>THIR</b>ty).</td></tr>
+<tr><td>a quarter past / to</td><td>y cuarto / menos cuarto · <i>half past six</i> = 6:30</td></tr>
+<tr><td>£12.50</td><td>twelve pounds fifty</td></tr>
+<tr><td>A, E, I / G, J / Y, W</td><td>/ei/, /i:/, /ai/ · /dʒi:/, /dʒei/ · /wai/, /dʌbəl ju:/</td></tr>
+<tr><td>double L</td><td>«ll»: <i>B-E-double L</i> = BELL</td></tr>
+</table></div>
+
+<div class="tabs-root" id="listabs">
+<div class="tabs"><button>Parte 1</button><button>Parte 2</button><button>Parte 3</button><button>Parte 4</button><button>Parte 5</button></div>
+
+<section class="tabpanel">
+<h2>Parte 1 · Cinco diálogos cortos</h2>
+<p><b>5 conversaciones cortas</b>, una pregunta cada una. En el examen real las opciones son dibujos; aquí las tienes escritas. Preguntan por horas, precios, lugares, objetos, el tiempo…</p>
+<div id="lp1"></div>
+</section>
+<section class="tabpanel">
+<h2>Parte 2 · Completar una ficha</h2>
+<p><b>Una persona habla</b> (un anuncio, un mensaje, un profesor que explica un curso) y completas 5 huecos con <b>una palabra, un número, una fecha o una hora</b>. Las palabras que se deletrean tienen que estar bien escritas.</p>
+<div id="lp2"></div>
+</section>
+<section class="tabpanel">
+<h2>Parte 3 · Una conversación larga</h2>
+<p>Dos personas hablan de un plan, una experiencia o un problema. <b>5 preguntas</b> de 3 opciones, en el orden del audio.</p>
+<div id="lp3"></div>
+</section>
+<section class="tabpanel">
+<h2>Parte 4 · Cinco textos cortos</h2>
+<p>Parecida a la Parte 1, pero las preguntas son sobre la <b>idea general</b>: ¿por qué llama?, ¿qué siente?, ¿de qué hablan?</p>
+<div id="lp4"></div>
+</section>
+<section class="tabpanel">
+<h2>Parte 5 · Emparejar</h2>
+<p>Una conversación. Tienes <b>5 personas</b> (o días) y <b>8 opciones</b>: decides qué corresponde a cada una. Sobran 3. El orden de las personas es el del audio.</p>
+<div id="lp5"></div>
+</section>
+</div>
+<p><a class="btn" href="speaking.html">Siguiente: Speaking →</a></p>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const LP1 = [
+ {q:'What time does the swimming lesson start?',o:['4.30','4.00','5.00'],script:[['W','Hi Dad. My swimming lesson usually starts at four, but today it\'s half an hour later.'],['M','So, half past four? OK, I\'ll take you at four then.']]},
+ {q:'How much did the man pay for his jacket?',o:['£35','£50','£25'],script:[['W','I love your jacket! Was it expensive?'],['M','It was fifty pounds, but it was in the sale, so I only paid thirty-five.']]},
+ {q:'Where are the girl\'s keys?',o:['in her coat','on the table','in her bag'],script:[['W','Mum, have you seen my keys? They\'re not in my bag.'],['W2','Did you look on the kitchen table?'],['W','Yes… oh wait, here they are, in my coat pocket!']]},
+ {q:'What will the weather be like tomorrow?',o:['windy','sunny','rainy'],script:[['M','And now the weather. Today was rainy, but tomorrow the rain will stop. It won\'t be sunny, I\'m afraid, but it will be very windy, so be careful on the roads.']]},
+ {q:'What is the boy going to buy for his mum?',o:['a book','some flowers','a scarf'],script:[['M','It\'s Mum\'s birthday tomorrow. I wanted to get her flowers, but they\'re so expensive.'],['W','What about a scarf?'],['M','She\'s got lots. I know – she loves reading. I\'ll get her a book.']]},
+];
+const LP2 = {intro:'You will hear a woman talking about a summer art course.',g:'W',script:`Hello everyone, and welcome to the summer art course. Let me give you some information. The course is for young people aged twelve to sixteen. It starts on the twenty-first of July and lasts for two weeks. Classes are in the morning, from half past nine to twelve o'clock. Your teacher is called Mr Pringle – that's P-R-I-N-G-L-E. Please bring a pencil and a T-shirt you don't need, because painting can be messy! The course costs ninety-five pounds, and that includes all the paper and paints.`,
+ head:'Summer Art Course',sents:['Course starts on: ___ July','Classes finish at: ___ o\'clock','Teacher\'s name: Mr ___','Bring: a pencil and an old ___','Cost: £___'],ans:[['21st','21','twenty-first'],['12','twelve'],['pringle'],['t-shirt','tshirt','t shirt'],['95','ninety-five']]};
+const LP3 = {intro:'You will hear Lucy talking to her friend Ben about a trip to London.',names:{W:'Lucy',M:'Ben'},script:[
+ ['M','Hi Lucy! How was your trip to London?'],['W','Great, thanks! We went for three days, from Friday to Sunday.'],
+ ['M','How did you get there? By train?'],['W','We usually go by train, but this time we went by coach because it was much cheaper.'],
+ ['M','What did you like best?'],['W','Well, the museums were good, and we went on the London Eye. But my favourite thing was a musical we saw on Saturday night. It was amazing.'],
+ ['M','Where did you stay?'],['W','With my aunt. She lives in a small flat near a big park. It was a bit crowded, but it was free!'],
+ ['M','Did you buy anything?'],['W','I wanted to buy some clothes, but the shops were too expensive. I just bought a T-shirt for my brother.']],
+ q:[{q:'How long was Lucy\'s trip?',o:['three days','two days','one week']},{q:'How did Lucy travel to London?',o:['by coach','by train','by car']},{q:'What did Lucy enjoy most?',o:['a show','a museum','the London Eye']},{q:'Where did Lucy stay?',o:['at a relative\'s home','in a hotel','in a flat near a park she rented']},{q:'What did Lucy buy?',o:['a present for her brother','some clothes for herself','nothing']}]};
+const LP4 = [
+ {ctx:'You hear a woman leaving a message.',q:'Why is she calling?',o:['to change the time of a meeting','to cancel a meeting','to ask for directions'],script:[['W','Hi Jack, it\'s Karen. About our meeting tomorrow – can we make it at eleven instead of ten? I have to take my son to the doctor first. Call me back. Thanks!']]},
+ {ctx:'You hear two friends talking about a film.',q:'What does the girl think of the film?',o:['It was too long.','It was very funny.','It was boring.'],script:[['M','Did you like the film?'],['W','The actors were good and some parts were really funny, but three hours! I nearly fell asleep at the end. They should cut it.']]},
+ {ctx:'You hear a man talking about his new job.',q:'What does he like about it?',o:['his colleagues','the money','the hours'],script:[['M','The pay isn\'t great and I start very early, but the people I work with are fantastic. We have lunch together every day.']]},
+ {ctx:'You hear a teacher talking to her class.',q:'What does she want the students to do?',o:['bring something to school','read a book at home','write a story'],script:[['W','Tomorrow we\'re going to talk about families, so please bring an old photo of your family to class. You don\'t need to write anything.']]},
+ {ctx:'You hear a boy talking about his weekend.',q:'How did he feel on Saturday?',o:['disappointed','excited','tired'],script:[['M','On Saturday we were going to play in the final, but it rained so much that they cancelled the match. We trained for months for that game. I was so sad.']]},
+];
+const LP5 = {intro:'You will hear Tom talking to his mother about what his friends are bringing to a picnic. What is each person bringing?',names:{M:'Tom',W:'Mum'},script:[
+ ['W','So, Tom, is everything ready for the picnic? Who\'s bringing what?'],
+ ['M','Well, Anna wanted to bring a cake, but she hasn\'t got time to make one, so she\'s bringing some fruit instead.'],
+ ['W','And Carlos?'],['M','Carlos is bringing the drinks – lemonade and water.'],
+ ['W','What about Emma? She makes lovely sandwiches.'],['M','Yes, but Peter\'s doing the sandwiches. Emma\'s bringing a big cake her dad made.'],
+ ['W','And Jake?'],['M','Jake\'s bringing his football. He doesn\'t cook!'],
+ ['W','So what are you taking?'],['M','Some crisps and the plates and cups.'],['W','Don\'t forget a blanket to sit on!']],
+ items:['Anna','Carlos','Emma','Peter','Jake'],opts:['fruit','drinks','cake','sandwiches','ball','crisps','blanket','salad']};
+document.addEventListener('DOMContentLoaded', () => {
+  practice($('#lp1'), 'l1', LP1, {args:[null]});
+  practice($('#lp2'), 'l2', LP2, {args:[null]});
+  practice($('#lp3'), 'l4', LP3, {args:[null]});
+  practice($('#lp4'), 'l1', LP4, {args:[null]});
+  practice($('#lp5'), 'lmatch', LP5, {args:[null]});
+});
+</script>
+</body>
+</html>
