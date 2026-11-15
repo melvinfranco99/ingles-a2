@@ -33,7 +33,7 @@ The first people to reach the top were Edmund Hillary from New Zealand and Tenzi
 Climbing Everest is very dangerous. At the top, there is very little oxygen, so most climbers [21] bottles of oxygen with them. It is also extremely cold, and strong winds can [22] climbers off the mountain.
 
 Today, Everest has a big problem with rubbish. Climbers leave tents, bottles and other things on the mountain. Every year, teams [23] up tonnes of rubbish. Climbers must now pay a lot of money to climb, and they have to [24] their rubbish back down with them.`,
-opts:[['border','line','edge'],['climbed','gone','arrived'],['carry','wear on','hold up'],['blow','push up','throw on'],['clean','wash','tidy'],['bring','take on','come']]},
+opts:[['border','line','edge'],['climbed','gone','arrived'],['carry','wear on','hold up'],['blow','push up','throw on'],['clean','wash','make'],['bring','take on','come']]},
 r5:{title:'Ski trip',text:`Hi Ana,
 
 I'm writing to you from the mountains! We arrived [25] the ski resort yesterday. The snow is perfect and the sun is shining.
