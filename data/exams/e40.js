@@ -33,7 +33,7 @@ There are more than five hundred types of shark. The biggest is the whale shark,
 Sharks have lived in the oceans for about four hundred million years – even [22] than dinosaurs! They can smell blood from far away, and some sharks can swim at fifty kilometres an hour.
 
 Today, many sharks are in danger. People [23] about a hundred million sharks every year, often just for their fins. Scientists say we must [24] sharks because they are very important for the oceans.`,
-opts:[['rarely','often','never'],['likely','possible','probably'],['dangerous','frightening','afraid'],['longer','older','before'],['kill','die','dead'],['protect','keep up','hold']]},
+opts:[['rarely','often','never'],['likely','possible','probably'],['dangerous','frightening','afraid'],['longer','bigger','faster'],['kill','die','dead'],['protect','keep up','hold']]},
 r5:{title:'Aquarium visit',text:`Hi Joe,
 
 Yesterday I went to the new aquarium [25] my grandparents. It was brilliant! There's a big glass tunnel, and you can walk under the water. Sharks and huge fish swim [26] your head!
